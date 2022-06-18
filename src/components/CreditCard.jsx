@@ -6,7 +6,7 @@ const CreditCard = ({name, number, expirationDate}) => {
 
   return (
     <div className="credit-card">
-      <div className="credit-card__container">
+      <div className="credit-card__body">
         {logo && <img src={logo} alt="logo" className="credit-card__logo" />}
 
         <div className="credit-card__number">
