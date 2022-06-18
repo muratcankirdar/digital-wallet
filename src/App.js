@@ -18,7 +18,6 @@ function App() {
         <AddCardButton />
       </div>
 
-      {/* Transactions */}
       <Transactions />
     </div>
   );
