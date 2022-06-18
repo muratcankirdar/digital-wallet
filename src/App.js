@@ -1,9 +1,12 @@
-import './App.css';
+import './App.scss';
+import NameSection from "./components/NameSection";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <div className="name-container">
+        <NameSection name="Zayn Malik" gender="male" />
+      </div>
     </div>
   );
 }

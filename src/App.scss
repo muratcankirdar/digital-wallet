@@ -1,0 +1,34 @@
+$color-brand: #246BFD;
+$color-text: #273240;
+$color-tab: #5D5D9C;
+$color-dark-grey: #BDBDBD;
+$color-grey: #D5D5E1;
+$color-light-grey: #F3F3F8;
+
+.App {
+  background-color: $color-light-grey;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.name-container {
+  padding: 56px 28px 0;
+}
+
+.name-section {
+  width: 100px;
+  height: 42px;
+  font-size: 14px;
+  font-family: Poppins, sans-serif;
+}
+
+.greeting-title {
+  color: $color-dark-grey;
+  margin: 0;
+}
+
+.greeting-name {
+  color: $color-text;
+  margin-top: 8px;
+}
