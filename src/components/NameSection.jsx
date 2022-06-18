@@ -1,5 +1,5 @@
 const NameSection = ({ name, gender }) => {
-  const displayedName = gender === 'male' ? 'Mr.' : 'Mrs.';
+  const genderText = gender === 'male' ? 'Mr.' : 'Mrs.';
 
   return (
     <div className="name-section">
@@ -8,7 +8,7 @@ const NameSection = ({ name, gender }) => {
       </p>
 
       <p className="greeting-name">
-        {displayedName} {name}
+        {genderText} {name}
       </p>
     </div>
   );
