@@ -28,7 +28,7 @@ function App() {
           </div>
 
           <button className="circle-add-button">
-            <img src={plus} alt="plus" className="plus"/>
+            <img src={plus} alt="plus"/>
           </button>
         </div>
 
