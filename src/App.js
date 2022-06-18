@@ -1,5 +1,6 @@
 import './App.scss';
 import {NameSection, CreditCard, AddCardButton, Transactions, BottomNavigation} from "./components";
+import plus from './assets/plus.svg';
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
             <CreditCard number="5142 8164 6526 2563" expirationDate="2022-10-08T08:59:13.055Z"/>
             <CreditCard number="5142 8164 6526 2563" expirationDate="2022-10-08T08:59:13.055Z"/>
           </div>
+
+          <button className="circle-add-button">
+            <img src={plus} alt="plus" className="plus"/>
+          </button>
         </div>
 
         <AddCardButton/>
