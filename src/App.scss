@@ -13,7 +13,7 @@ $color-light-grey: #F3F3F8;
 }
 
 .name-container {
-  padding: 56px 28px 0;
+  padding: 56px 28px 16px;
 }
 
 .name-section {
@@ -31,4 +31,43 @@ $color-light-grey: #F3F3F8;
 .greeting-name {
   color: $color-text;
   margin-top: 8px;
+}
+
+.credit-card {
+  width: 312px;
+  height: 174px;
+  border: 1px solid $color-tab;
+  border-radius: 15px;
+  display: inline-block;
+  margin: 8px;
+
+  &:first-child {
+    margin-left: 28px;
+  }
+}
+
+.credit-card-container {
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+.add-card-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 319px;
+  height: 48px;
+  color: $color-brand;
+  border: 1px solid $color-brand;
+  background: transparent;
+  border-radius: 8px;
+  font-family: Poppins, sans-serif;
+  margin: 8px auto;
+  padding: 0;
+  font-size: 14px;
+
+  &__plus {
+    width: 16px;
+    height: 16px;
+  }
 }
