@@ -30,16 +30,18 @@ body {
 .name-section {
   font-size: 14px;
   font-family: Poppins, sans-serif;
-}
+  max-width: 948px;
+  margin: auto;
+  padding: 3em 1rem 1rem 1.75rem;
 
-.greeting-title {
-  color: $color-dark-grey;
-  margin: 0;
-}
+  .title {
+    color: $color-dark-grey;
+    margin: 0;
+  }
 
-.greeting-name {
-  color: $color-text;
-  margin-top: 8px;
+  .name {
+    color: $color-text;
+  }
 }
 
 .wrapper {
@@ -335,6 +337,10 @@ body {
   justify-content: center;
   align-items: center;
   border: none;
+
+  @media screen and(min-width: $screen-xs-max) {
+    display: none;
+  }
 }
 
 .dialog-close {

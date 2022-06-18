@@ -3,13 +3,15 @@ const NameSection = ({ name, gender }) => {
 
   return (
     <div className="name-section">
-      <p className="greeting-title">
+      <span className="title">
         Good Morning
-      </p>
+      </span>
 
-      <p className="greeting-name">
+      <br/>
+
+      <span className="name">
         {genderText} {name}
-      </p>
+      </span>
     </div>
   );
 };
