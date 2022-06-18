@@ -4,6 +4,7 @@ $color-tab: #5D5D9C;
 $color-dark-grey: #BDBDBD;
 $color-grey: #D5D5E1;
 $color-light-grey: #F3F3F8;
+$color-white: #ffffff;
 
 .App {
   background-color: $color-light-grey;
@@ -36,13 +37,65 @@ $color-light-grey: #F3F3F8;
 .credit-card {
   width: 312px;
   height: 174px;
-  border: 1px solid $color-tab;
+  background: $color-tab;
   border-radius: 15px;
   display: inline-block;
   margin: 8px;
+  color: $color-white;
 
   &:first-child {
     margin-left: 28px;
+  }
+
+  &__logo {
+    width: 49px;
+    height: 49px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    padding: 0 16px;
+  }
+
+  &__number {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-family: 'IBM Plex Mono', sans-serif;
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+      font-weight: 400;
+      font-size: 12px;
+    }
+    &-text {
+      font-weight: 600;
+    }
+  }
+
+  &__expiration-date {
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+      font-weight: 400;
+      font-size: 12px;
+    }
   }
 }
 
