@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 
 const Transactions = () => {
-  const [currency, setCurrency] = useState('USD');
+  const [currency, setCurrency] = useState('TRY');
 
   return (
     <div className="transactions">
@@ -28,8 +28,8 @@ const Transactions = () => {
               value={currency}
               onChange={(event) => setCurrency(event.target.value)}
             >
-              <MenuItem value="USD">USD</MenuItem>
               <MenuItem value="TRY">TL</MenuItem>
+              <MenuItem value="USD">USD</MenuItem>
               <MenuItem value="EUR">EUR</MenuItem>
               <MenuItem value="CHF">CHF</MenuItem>
             </Select>
@@ -44,11 +44,11 @@ const Transactions = () => {
 
         <div className="expenses">
           {/* Mock data for design */}
-          <ExpenseItem />
-          <ExpenseItem />
-          <ExpenseItem />
-          <ExpenseItem />
-          <ExpenseItem />
+          {
+            [...Array(15)].map((_, index) => (
+            <ExpenseItem index={index} key={index} />
+            ))
+          }
         </div>
       </div>
     </div>
