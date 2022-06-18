@@ -1,8 +1,11 @@
 import './App.scss';
-import {NameSection, CreditCard, AddCardButton, Transactions, BottomNavigation} from "./components";
+import { useState } from 'react';
+import {NameSection, CreditCard, AddCardButton, Transactions, BottomNavigation, AddCardDialog} from "./components";
 import plus from './assets/plus.svg';
 
 function App() {
+  const [isDialogVisible, setIsDialogVisible] = useState(false);
+
   return (
     <div className="App">
       <div className="name-container">
@@ -27,17 +30,19 @@ function App() {
             <CreditCard number="5142 8164 6526 2563" expirationDate="2022-10-08T08:59:13.055Z"/>
           </div>
 
-          <button className="circle-add-button">
+          <button className="circle-add-button"  onClick={() => setIsDialogVisible(true)}>
             <img src={plus} alt="plus"/>
           </button>
         </div>
 
-        <AddCardButton/>
+        <AddCardButton onAddCard={() => setIsDialogVisible(true)}/>
 
         <Transactions/>
         {/* Bottom Bar */}
         <BottomNavigation/>
       </div>
+
+      <AddCardDialog isOpen={isDialogVisible} onClose={() => setIsDialogVisible(false)} />
     </div>
   );
 }
