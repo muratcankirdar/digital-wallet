@@ -60,7 +60,7 @@ $color-white: #ffffff;
     flex-direction: column;
     justify-content: space-around;
     height: 100%;
-    padding: 0 16px;
+    padding: 0 1.25rem;
   }
 
   &__number {
@@ -123,7 +123,7 @@ $color-white: #ffffff;
   background: transparent;
   border-radius: 8px;
   font-family: Poppins, sans-serif;
-  margin: 8px auto;
+  margin: 0.5rem auto 0 auto;
   padding: 0;
   font-size: 14px;
 
@@ -138,10 +138,10 @@ $color-white: #ffffff;
   background: $color-white;
   border-radius: 2em 2em 0 0;
   height: 420px;
-  margin-top: 2em;
-  padding: 2em;
+  margin-top: 1.5em;
+  padding: 1.75em;
   overflow-y: scroll;
-  -ms-overflow-style: none;  /* IE and Edge */
+  -ms-overflow-style: none; /* IE and Edge */
 
   &::-webkit-scrollbar {
     display: none;
@@ -164,7 +164,7 @@ $color-white: #ffffff;
       font-family: 'IBM Plex Mono', monospace;
       font-weight: 700;
       font-size: 24px;
-      line-height: 31.2px;
+      color: $color-text;
     }
   }
 
@@ -187,7 +187,6 @@ $color-white: #ffffff;
     flex-shrink: 1;
     background: rgba(50, 167, 226, 0.1);
     border-radius: 15px;
-    padding: .5em;
     margin-right: 1em;
     width: 40px;
     height: 40px;
@@ -196,7 +195,7 @@ $color-white: #ffffff;
     justify-content: center;
 
     img {
-      width: 1.5em;
+      width: 1.25em;
     }
   }
 
@@ -226,5 +225,23 @@ $color-white: #ffffff;
     color: $color-text;
     font-weight: 400;
     opacity: 0.5;
+  }
+}
+
+/* Bottom Navigation mobile */
+.bottom-navigation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background: $color-white;
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 1rem;
   }
 }

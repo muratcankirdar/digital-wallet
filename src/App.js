@@ -1,5 +1,5 @@
 import './App.scss';
-import { NameSection, CreditCard, AddCardButton, Transactions } from "./components";
+import { NameSection, CreditCard, AddCardButton, Transactions, BottomNavigation } from "./components";
 
 function App() {
   return (
@@ -14,11 +14,12 @@ function App() {
         <CreditCard number="5142 8164 6526 2563" expirationDate="2022-10-08T08:59:13.055Z" />
       </div>
 
-      <div>
-        <AddCardButton />
-      </div>
+      <AddCardButton />
 
       <Transactions />
+
+      {/* Bottom Bar */}
+      <BottomNavigation />
     </div>
   );
 }
