@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 
 const Transactions = () => {
-  const [currency, setCurrency] = useState('TRY');
+  const [currency, setCurrency] = useState('USD');
 
   return (
     <div className="transactions">
