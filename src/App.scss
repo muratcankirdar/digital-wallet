@@ -24,10 +24,6 @@ body {
   overflow: auto;
 }
 
-.name-container {
-  // todo fix position
-}
-
 .name-section {
   font-size: 14px;
   font-family: Poppins, sans-serif;
@@ -42,6 +38,7 @@ body {
 
   .name {
     color: $color-text;
+    text-transform: capitalize;
   }
 }
 
@@ -115,6 +112,7 @@ body {
     justify-content: space-between;
     width: 100%;
     font-family: 'IBM Plex Mono', sans-serif;
+    text-transform: uppercase;
   }
 
   &__name {
