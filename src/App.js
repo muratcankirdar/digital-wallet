@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <div className="name-container">
-        <NameSection name="Zayn Malik" gender="malde"/>
+        <NameSection name="Zayn Malik" gender="male"/>
       </div>
 
       <div className="wrapper">
