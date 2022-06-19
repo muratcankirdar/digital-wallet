@@ -4,15 +4,16 @@ import {formatDate} from "../utils/numberFormat";
 
 const CreditCard = (
   {
-    name = '',
-    cardNumber = '',
-    expirationDate,
+    card,
+    userFullName = '',
     index = 1,
     selectCard
   }) => {
-  const logo = cardNumber.startsWith('4') ? visa : mastercard;
+  const logo = card.cardNumber.startsWith('4') ? visa : mastercard;
   const classes = `credit-card gradient-${(index % 4).toString()}`;
   const dateOptions = {month: '2-digit', year: '2-digit'};
+  const shownName = card.name ? card.name : userFullName;
+  const shownCardNumber = card.cardNumber.replace(/-/g, ' ');
 
   return (
     <div className={classes} onClick={selectCard}>
@@ -20,7 +21,7 @@ const CreditCard = (
         {logo && <img src={logo} alt="logo" className="credit-card__logo"/>}
 
         <div className="credit-card__number">
-          {cardNumber}
+          {shownCardNumber}
         </div>
 
         <div className="credit-card__bottom">
@@ -30,7 +31,7 @@ const CreditCard = (
             </span>
 
             <span className="credit-card__name-text">
-              {name}
+              {shownName}
             </span>
           </div>
 
@@ -40,7 +41,7 @@ const CreditCard = (
             </span>
 
             <span className="credit-card__expiration-date-text">
-              {formatDate(expirationDate, dateOptions)}
+              {formatDate(card.cardExpiration, dateOptions)}
             </span>
           </div>
         </div>
