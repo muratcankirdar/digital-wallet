@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# Digital Wallet App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How to run project
+- Clone the project
+- Open project folder with terminal
+- Checkout to branch you want
+- npm install
+- npm start
 
-## Available Scripts
 
-In the project directory, you can run:
+## Used tech stack
+- Node 14.19.1
+- npm 8.7.0
+- Created with create-react-app
 
-### `npm start`
+## Project description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Project has 2 branches; stage-1 and stage-2.
+In stage-1 branch applied design from figma with components, icons, colors for mobile and desktop responsive.
+all data static and clicks are restricted (except dialog open)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+stage-2 branch created from stage-1 branch after design implementation is finished. This branch includes request to given
+api get and put methods. All data is from given api response for example card numbers, transactions history, balance etc.
+and user can add new card to list. User can change selected card dynamically with click on it and other cards will be blurred.
 
-### `npm test`
+I created components to split logic. Every component must handle small piece of entire application, so I tried to achieve this.
+I tried my best about pixel perfect design but my experience with this topic is not so much so, I did my best and
+found out I have to learn so much things with scss and responsive design, I hope I did well about design.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I created util methods to avoid code duplication for format currency amount and dates.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### [Stage-2 branch public demo link](https://digital-wallet-lpl3agoki-muratcank.vercel.app/)
