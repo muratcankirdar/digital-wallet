@@ -1,11 +1,6 @@
 import visa from '../assets/visa.svg';
 import mastercard from '../assets/mastercard.svg';
-
-const formatDate = (date) => {
-  const options = {month: '2-digit', year: '2-digit'};
-
-  return new Date(date).toLocaleDateString('default', options);
-}
+import {formatDate} from "../utils/numberFormat";
 
 const CreditCard = (
   {
@@ -17,6 +12,7 @@ const CreditCard = (
   }) => {
   const logo = cardNumber.startsWith('4') ? visa : mastercard;
   const classes = `credit-card gradient-${(index % 4).toString()}`;
+  const dateOptions = {month: '2-digit', year: '2-digit'};
 
   return (
     <div className={classes} onClick={selectCard}>
@@ -44,7 +40,7 @@ const CreditCard = (
             </span>
 
             <span className="credit-card__expiration-date-text">
-              {formatDate(expirationDate)}
+              {formatDate(expirationDate, dateOptions)}
             </span>
           </div>
         </div>
