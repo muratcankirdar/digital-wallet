@@ -15,6 +15,41 @@ body {
   background-color: $color-light-grey;
 }
 
+/* Global static classes start */
+.gradient-0 {
+  background: linear-gradient(106.15deg, #042843 1.98%, #726E9E 98%);
+}
+
+.gradient-1 {
+  background: linear-gradient(106.15deg, #52B6FE 1.98%, #726E9E 98%);
+}
+
+.gradient-2 {
+  background: linear-gradient(106.15deg, #7E108F 1.98%, #726E9E 98%);
+}
+
+.gradient-3 {
+  background: linear-gradient(106.15deg, #31DBB2 1.98%, #726E9E 98%);
+}
+
+.grocery {
+  background: rgba(50, 167, 226, 0.1);
+}
+
+.work {
+  background: rgba(34, 176, 125, 0.1);
+}
+
+.equipment {
+  background: rgba(255, 135, 0, 0.1);
+}
+
+.entertainment {
+  background: rgba(181, 72, 198, 0.1);
+}
+
+/* Global static classes end */
+
 .App {
   min-height: 100vh;
   max-height: 100vh;
@@ -49,22 +84,6 @@ body {
     justify-content: center;
     max-height: 800px;
   }
-}
-
-.gradient-0 {
-  background: linear-gradient(106.15deg, #042843 1.98%, #726E9E 98%);
-}
-
-.gradient-1 {
-  background: linear-gradient(106.15deg, #52B6FE 1.98%, #726E9E 98%);
-}
-
-.gradient-2 {
-  background: linear-gradient(106.15deg, #7E108F 1.98%, #726E9E 98%);
-}
-
-.gradient-3 {
-  background: linear-gradient(106.15deg, #31DBB2 1.98%, #726E9E 98%);
 }
 
 .credit-card {
@@ -269,7 +288,6 @@ body {
 
   .icon {
     flex-shrink: 1;
-    background: rgba(50, 167, 226, 0.1);
     border-radius: 15px;
     margin-right: 1em;
     width: 40px;
@@ -295,6 +313,7 @@ body {
     justify-content: space-between;
     font-weight: 500;
     color: $color-text;
+    text-transform: capitalize;
 
     @media screen and (max-width: $screen-xs-max) {
       font-family: Poppins, sans-serif;

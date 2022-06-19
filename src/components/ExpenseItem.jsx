@@ -33,7 +33,7 @@ const ExpenseItem = ({item = {}, index = 0}) => {
 
   return (
     <div className="expense-item">
-      <div className="icon">
+      <div className={'icon ' + item.category}>
         <img src={icon} alt="buy"/>
       </div>
 
@@ -41,7 +41,6 @@ const ExpenseItem = ({item = {}, index = 0}) => {
         <div className="top">
           <span className="title">{item.category}</span>
           <span className="title">{item.amount}</span>
-
         </div>
 
         <div className="bottom">
