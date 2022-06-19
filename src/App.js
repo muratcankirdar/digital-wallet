@@ -14,10 +14,26 @@ function App() {
     setUser(response.data);
   }
 
+  const setUserData = async (user) => {
+    const request = await axios.put('https://628fe4ba0e69410599e4b038.mockapi.io/users/79467853', user);
+    setUser(request.data);
+  }
+
   const userFullName = `${user.firstName} ${user.lastName}`;
 
   const selectedCard = () => {
     return user.cards ? user.cards[selectedCardIndex] : {};
+  }
+
+  const onAddCard = (params) => {
+    const userObject = {...user};
+    userObject.cards.push({
+      ...params,
+      transactions: [],
+      amount: 0,
+    });
+
+    setUserData(userObject);
   }
 
   useEffect(() => {
@@ -66,7 +82,11 @@ function App() {
         <BottomNavigation/>
       </div>
 
-      <AddCardDialog isOpen={isDialogVisible} onClose={() => setIsDialogVisible(false)}/>
+      <AddCardDialog
+        isOpen={isDialogVisible}
+        onClose={() => setIsDialogVisible(false)}
+        onAddCard={onAddCard}
+      />
     </div>
   );
 }
