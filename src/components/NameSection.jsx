@@ -1,5 +1,5 @@
 const NameSection = ({ name, gender }) => {
-  const genderText = gender === 'male' ? 'Mr.' : 'Mrs.';
+  const genderText = gender === 'male' ? 'Mr.' :  gender === 'female' ? 'Mrs.' : '';
 
   return (
     <div className="name-section">
