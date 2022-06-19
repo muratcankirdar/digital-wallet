@@ -42,7 +42,7 @@ const AddCardDialog = ({isOpen, onClose, onAddCard}) => {
   const handleOnAddCard = () => {
     /* I couldn't figure how to convert MM/YY to timezone string */
     let expiration = cardExpiration.split('/');
-    expiration = `20${expiration[1]}-${expiration[0]-0}-01T00:00:00.000Z`;
+    expiration = `20${expiration[1]}-${expiration[0]}-01T00:00:00.000Z`;
 
     onAddCard({
       name,
@@ -50,6 +50,14 @@ const AddCardDialog = ({isOpen, onClose, onAddCard}) => {
       cardExpiration: expiration,
       cardCvv
     });
+    clearValues();
+  }
+
+  const clearValues = () => {
+    setName('');
+    setCardNumber('');
+    setCardExpiration('');
+    setCardCvv('');
   }
 
   useEffect(() => {
@@ -64,7 +72,7 @@ const AddCardDialog = ({isOpen, onClose, onAddCard}) => {
   return (
     <Dialog open={isOpen} fullScreen={isMobile} onClose={onClose}>
       {!isMobile && (
-        <div className="dialog-close" onClick={onClose}>
+        <div className="dialog-close pointer" onClick={onClose}>
           <img src={clear} alt="clear"/>
         </div>
       )}
