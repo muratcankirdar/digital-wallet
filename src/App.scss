@@ -64,6 +64,10 @@ body {
   display: flex;
   flex-direction: column;
   overflow: auto;
+
+  @media screen and(max-width: $screen-xs-max) {
+    overflow-y: hidden;
+  }
 }
 
 .name-section {
@@ -349,7 +353,7 @@ body {
 
 /* Bottom Navigation mobile */
 .bottom-navigation {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   display: flex;
