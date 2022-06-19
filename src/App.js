@@ -33,7 +33,8 @@ function App() {
       amount: 0,
     });
 
-    setUserData(userObject);
+    setUserData(userObject)
+      .finally(() => setIsDialogVisible(false));
   }
 
   useEffect(() => {
@@ -60,9 +61,8 @@ function App() {
           <div className="cards">
             {user.cards && user.cards.map((card, index) => (
               <CreditCard
-                name={userFullName}
-                cardNumber={card.cardNumber}
-                expirationDate={card.cardExpiration}
+                card={card}
+                userFullName={userFullName}
                 index={index}
                 key={index}
                 selectCard={() => setSelectedCardIndex(index)}
