@@ -66,6 +66,7 @@ function App() {
                 index={index}
                 key={index}
                 selectCard={() => setSelectedCardIndex(index)}
+                selectedCardIndex={selectedCardIndex}
               />
             ))}
           </div>

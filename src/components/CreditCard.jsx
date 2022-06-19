@@ -6,17 +6,27 @@ const CreditCard = (
   {
     card,
     userFullName = '',
-    index = 1,
-    selectCard
+    index = 0,
+    selectCard,
+    selectedCardIndex = 0,
   }) => {
   const logo = card.cardNumber.startsWith('4') ? visa : mastercard;
-  const classes = `credit-card gradient-${(index % 4).toString()}`;
   const dateOptions = {month: '2-digit', year: '2-digit'};
   const shownName = card.name ? card.name : userFullName;
   const shownCardNumber = card.cardNumber.replace(/-/g, ' ');
 
+  const classes = () => {
+    let list = ['credit-card', `gradient-${(index % 4).toString()}`];
+
+    if (selectedCardIndex !== index) {
+      list.push('card-blur')
+    }
+
+    return list.join(' ');
+  }
+
   return (
-    <div className={classes} onClick={selectCard}>
+    <div className={classes()} onClick={selectCard}>
       <div className="credit-card__body">
         {logo && <img src={logo} alt="logo" className="credit-card__logo"/>}
 
