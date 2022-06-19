@@ -13,12 +13,13 @@ const CreditCard = (
     cardNumber = '',
     expirationDate,
     index = 1,
+    selectCard
   }) => {
   const logo = cardNumber.startsWith('4') ? visa : mastercard;
   const classes = `credit-card gradient-${(index % 4).toString()}`;
 
   return (
-    <div className={classes}>
+    <div className={classes} onClick={selectCard}>
       <div className="credit-card__body">
         {logo && <img src={logo} alt="logo" className="credit-card__logo"/>}
 
