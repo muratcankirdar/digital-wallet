@@ -14,7 +14,7 @@ function App() {
     setUser(response.data);
   }
 
-  const userFullName =`${user.firstName} ${user.lastName}`;
+  const userFullName = `${user.firstName} ${user.lastName}`;
 
   const selectedCard = () => {
     return user.cards ? user.cards[selectedCardIndex] : {};
@@ -61,12 +61,12 @@ function App() {
 
         <AddCardButton onAddCard={() => setIsDialogVisible(true)}/>
 
-        <Transactions/>
+        <Transactions selectedCard={selectedCard()}/>
         {/* Bottom Bar */}
         <BottomNavigation/>
       </div>
 
-      <AddCardDialog isOpen={isDialogVisible} onClose={() => setIsDialogVisible(false)} />
+      <AddCardDialog isOpen={isDialogVisible} onClose={() => setIsDialogVisible(false)}/>
     </div>
   );
 }

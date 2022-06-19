@@ -3,44 +3,33 @@ import camera from '../assets/camera.svg';
 import game from '../assets/game.svg';
 import work from '../assets/work.svg';
 
-const ExpenseItem = ({ index = 0 }) => {
-  // mock data
-  const data = [
-    {
-      icon: buy,
-      title: 'Grocery',
-      date: 'Nov 17',
-      amount: '326.800',
-      description: 'Minimarket Anugrah',
-    },
-    {
-      icon: game,
-      title: 'Entertainment',
-      date: 'Nov 17',
-      amount: '326.800',
-      description: 'Minimarket Anugrah',
-    },
-    {
-      icon: camera,
-      title: 'Equipments',
-      date: 'Nov 17',
-      amount: '326.800',
-      description: 'Minimarket Anugrah',
-    },
-    {
-      icon: work,
-      title: 'Office Itsems',
-      date: 'Nov 17',
-      amount: '326.800',
-      description: 'Minimarket Anugrah',
-    }
-  ]
+const formatDate = (date) => {
+  const options = { month: 'short', day: 'numeric' };
 
-  const icon = data[index % 4].icon;
-  const title = data[index % 4].title;
-  const date = data[index % 4].date;
-  const amount = data[index % 4].amount;
-  const description = data[index % 4].description;
+  return new Date(date).toLocaleDateString('default', options);
+};
+
+const ExpenseItem = ({item = {}, index = 0}) => {
+  const icons = [
+    {
+      category: 'grocery',
+      icon: buy
+    },
+    {
+      category: 'entertainment',
+      icon: game
+    },
+    {
+      category: 'equipment',
+      icon: camera
+    },
+    {
+      category: 'work',
+      icon: work
+    }
+  ];
+
+  const icon = icons.find(i => i.category === item.category).icon;
 
   return (
     <div className="expense-item">
@@ -50,14 +39,14 @@ const ExpenseItem = ({ index = 0 }) => {
 
       <div className="info">
         <div className="top">
-          <span className="title">{title}</span>
-          <span className="title">{amount}</span>
+          <span className="title">{item.category}</span>
+          <span className="title">{item.amount}</span>
 
         </div>
 
         <div className="bottom">
-          <span>{date}</span>
-          <span>{description}</span>
+          <span>{formatDate(item.date)}</span>
+          <span>{item.company}</span>
         </div>
       </div>
     </div>

@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { ExpenseItem } from './index';
+import {useState} from 'react';
+import {ExpenseItem} from './index';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 
-const Transactions = () => {
+const Transactions = ({selectedCard}) => {
   const [currency, setCurrency] = useState('USD');
 
   return (
@@ -23,7 +23,7 @@ const Transactions = () => {
         </div>
 
         <div className="currency-selection">
-          <FormControl sx={{ m: 0, width: 110 }} size="small">
+          <FormControl sx={{m: 0, width: 110}} size="small">
             <Select
               value={currency}
               onChange={(event) => setCurrency(event.target.value)}
@@ -43,10 +43,9 @@ const Transactions = () => {
         </div>
 
         <div className="expenses">
-          {/* Mock data for design */}
-          {
-            [...Array(15)].map((_, index) => (
-            <ExpenseItem index={index} key={index} />
+          {selectedCard.transactions &&
+            selectedCard.transactions.map((item, index) => (
+              <ExpenseItem index={index} key={index} item={item}/>
             ))
           }
         </div>
