@@ -1,12 +1,20 @@
 import visa from '../assets/visa.svg';
 import mastercard from '../assets/mastercard.svg';
 
-const CreditCard = ({name, number, expirationDate, index = 1}) => {
+const CreditCard = ({name, number, expirationDate, index = 0, selectedCardIndex = 0}) => {
   const logo = number.startsWith('4') ? visa : mastercard;
-  const classes = `credit-card gradient-${(index % 4).toString()}`;
+  const classes = () => {
+    let list = ['credit-card', `gradient-${(index % 4).toString()}`];
+
+    if (selectedCardIndex !== index) {
+      list.push('card-blur')
+    }
+
+    return list.join(' ');
+  }
 
   return (
-    <div className={classes}>
+    <div className={classes()}>
       <div className="credit-card__body">
         {logo && <img src={logo} alt="logo" className="credit-card__logo" />}
 
@@ -21,13 +29,13 @@ const CreditCard = ({name, number, expirationDate, index = 1}) => {
             </span>
 
             <span className="credit-card__name-text">
-              ZAYN MALIK
+              Zayn Malik
             </span>
           </div>
 
           <div className="credit-card__expiration-date">
             <span className="credit-card__expiration-date-title">
-              VALID TILL
+              Valid Till
             </span>
 
             <span className="credit-card__expiration-date-text">

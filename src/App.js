@@ -20,6 +20,7 @@ function App() {
 
           <div className="cards">
             {/* Mock data for design */}
+            {/* In stage 2, cards are clickable and blur effect will change */}
             <CreditCard number="5142 8164 6526 2563" expirationDate="2022-10-08T08:59:13.055Z" index={0}/>
             <CreditCard number="4142 8164 6526 2563" expirationDate="2022-10-08T08:59:13.055Z" index={1}/>
             <CreditCard number="5142 8164 6526 2563" expirationDate="2022-10-08T08:59:13.055Z" index={2}/>

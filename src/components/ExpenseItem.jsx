@@ -8,28 +8,28 @@ const ExpenseItem = ({ index = 0 }) => {
   const data = [
     {
       icon: buy,
-      title: 'Grocery',
+      title: 'grocery',
       date: 'Nov 17',
       amount: '326.800',
       description: 'Minimarket Anugrah',
     },
     {
       icon: game,
-      title: 'Entertainment',
+      title: 'entertainment',
       date: 'Nov 17',
       amount: '326.800',
       description: 'Minimarket Anugrah',
     },
     {
       icon: camera,
-      title: 'Equipments',
+      title: 'equipments',
       date: 'Nov 17',
       amount: '326.800',
       description: 'Minimarket Anugrah',
     },
     {
       icon: work,
-      title: 'Office Itsems',
+      title: 'work',
       date: 'Nov 17',
       amount: '326.800',
       description: 'Minimarket Anugrah',
@@ -44,7 +44,7 @@ const ExpenseItem = ({ index = 0 }) => {
 
   return (
     <div className="expense-item">
-      <div className="icon">
+      <div className={`icon ${title.toLowerCase()}`}>
         <img src={icon} alt="buy"/>
       </div>
 

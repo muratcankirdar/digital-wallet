@@ -15,45 +15,7 @@ body {
   background-color: $color-light-grey;
 }
 
-.App {
-  min-height: 100vh;
-  max-height: 100vh;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
-}
-
-.name-container {
-  // todo fix position
-}
-
-.name-section {
-  font-size: 14px;
-  font-family: Poppins, sans-serif;
-  max-width: 948px;
-  margin: auto;
-  padding: 3em 1rem 1rem 1.75rem;
-
-  .title {
-    color: $color-dark-grey;
-    margin: 0;
-  }
-
-  .name {
-    color: $color-text;
-  }
-}
-
-.wrapper {
-  @media screen and (min-width: $screen-xs-max) {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    max-height: 800px;
-  }
-}
-
+/* Global static classes start */
 .gradient-0 {
   background: linear-gradient(106.15deg, #042843 1.98%, #726E9E 98%);
 }
@@ -70,11 +32,73 @@ body {
   background: linear-gradient(106.15deg, #31DBB2 1.98%, #726E9E 98%);
 }
 
+.grocery {
+  background: rgba(50, 167, 226, 0.1);
+}
+
+.work {
+  background: rgba(34, 176, 125, 0.1);
+}
+
+.equipments {
+  background: rgba(255, 135, 0, 0.1);
+}
+
+.entertainment {
+  background: rgba(181, 72, 198, 0.1);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.card-blur {
+  filter: blur(4px);
+}
+/* Global static classes end */
+
+.App {
+  min-height: 100vh;
+  max-height: 100vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.name-section {
+  font-size: 14px;
+  font-family: Poppins, sans-serif;
+  max-width: 948px;
+  margin: auto;
+  padding: 3em 1rem 1rem 1.75rem;
+
+  .title {
+    color: $color-dark-grey;
+    margin: 0;
+  }
+
+  .name {
+    color: $color-text;
+    text-transform: capitalize;
+  }
+}
+
+.wrapper {
+  @media screen and (min-width: $screen-xs-max) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-height: 800px;
+  }
+}
+
 .credit-card {
   width: 312px;
   height: 174px;
   border-radius: 15px;
   color: $color-white;
+  cursor: pointer;
 
   @media screen and (min-width: $screen-xs-max) {
     margin: 1rem auto;
@@ -115,6 +139,7 @@ body {
     justify-content: space-between;
     width: 100%;
     font-family: 'IBM Plex Mono', sans-serif;
+    text-transform: uppercase;
   }
 
   &__name {
@@ -145,6 +170,7 @@ body {
 .credit-card-container {
   @media screen and (min-width: $screen-xs-max) {
     width: 100%;
+    height: 100%;
     max-width: 408px;
     background: $color-white;
     margin: 0 .5rem;
@@ -196,6 +222,7 @@ body {
   margin: 0.5rem auto 0 auto;
   padding: 0;
   font-size: 14px;
+  cursor: pointer;
 
   &__plus {
     width: 16px;
@@ -269,7 +296,6 @@ body {
 
   .icon {
     flex-shrink: 1;
-    background: rgba(50, 167, 226, 0.1);
     border-radius: 15px;
     margin-right: 1em;
     width: 40px;
@@ -295,6 +321,7 @@ body {
     justify-content: space-between;
     font-weight: 500;
     color: $color-text;
+    text-transform: capitalize;
 
     @media screen and (max-width: $screen-xs-max) {
       font-family: Poppins, sans-serif;
@@ -359,6 +386,7 @@ body {
   justify-content: center;
   align-items: center;
   border: none;
+  cursor: pointer;
 
   @media screen and(max-width: $screen-xs-max) {
     display: none;
