@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <div className="name-container">
-        <NameSection name="Zayn Malik" gender="male"/>
+        <NameSection name="Zayn Malik" gender="malde"/>
       </div>
 
       <div className="wrapper">
@@ -20,14 +20,10 @@ function App() {
 
           <div className="cards">
             {/* Mock data for design */}
-            <CreditCard number="5142 8164 6526 2563" expirationDate="2022-10-08T08:59:13.055Z"/>
-            <CreditCard number="5142 8164 6526 2563" expirationDate="2022-10-08T08:59:13.055Z"/>
-            <CreditCard number="5142 8164 6526 2563" expirationDate="2022-10-08T08:59:13.055Z"/>
-            <CreditCard number="5142 8164 6526 2563" expirationDate="2022-10-08T08:59:13.055Z"/>
-            <CreditCard number="5142 8164 6526 2563" expirationDate="2022-10-08T08:59:13.055Z"/>
-            <CreditCard number="5142 8164 6526 2563" expirationDate="2022-10-08T08:59:13.055Z"/>
-            <CreditCard number="5142 8164 6526 2563" expirationDate="2022-10-08T08:59:13.055Z"/>
-            <CreditCard number="5142 8164 6526 2563" expirationDate="2022-10-08T08:59:13.055Z"/>
+            <CreditCard number="5142 8164 6526 2563" expirationDate="2022-10-08T08:59:13.055Z" index={0}/>
+            <CreditCard number="4142 8164 6526 2563" expirationDate="2022-10-08T08:59:13.055Z" index={1}/>
+            <CreditCard number="5142 8164 6526 2563" expirationDate="2022-10-08T08:59:13.055Z" index={2}/>
+            <CreditCard number="5142 8164 6526 2563" expirationDate="2022-10-08T08:59:13.055Z" index={3}/>
           </div>
 
           <button className="circle-add-button"  onClick={() => setIsDialogVisible(true)}>

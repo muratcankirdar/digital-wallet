@@ -1,11 +1,12 @@
 import visa from '../assets/visa.svg';
 import mastercard from '../assets/mastercard.svg';
 
-const CreditCard = ({name, number, expirationDate}) => {
+const CreditCard = ({name, number, expirationDate, index = 1}) => {
   const logo = number.startsWith('4') ? visa : mastercard;
+  const classes = `credit-card gradient-${(index % 4).toString()}`;
 
   return (
-    <div className="credit-card">
+    <div className={classes}>
       <div className="credit-card__body">
         {logo && <img src={logo} alt="logo" className="credit-card__logo" />}
 
