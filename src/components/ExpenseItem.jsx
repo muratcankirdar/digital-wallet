@@ -2,14 +2,9 @@ import buy from '../assets/Buy.svg';
 import camera from '../assets/camera.svg';
 import game from '../assets/game.svg';
 import work from '../assets/work.svg';
+import {formatDate, calculateAmount} from "../utils/numberFormat";
 
-const formatDate = (date) => {
-  const options = { month: 'short', day: 'numeric' };
-
-  return new Date(date).toLocaleDateString('default', options);
-};
-
-const ExpenseItem = ({item = {}, index = 0}) => {
+const ExpenseItem = ({item = {}, currency, currencyExchangeRates}) => {
   const icons = [
     {
       category: 'grocery',
@@ -30,6 +25,12 @@ const ExpenseItem = ({item = {}, index = 0}) => {
   ];
 
   const icon = icons.find(i => i.category === item.category).icon;
+  const dateOptions = {month: 'short', day: 'numeric'};
+  const totalAmount = calculateAmount({
+    amount: item.amount,
+    currency,
+    currencyExchangeRates,
+  });
 
   return (
     <div className="expense-item">
@@ -40,11 +41,11 @@ const ExpenseItem = ({item = {}, index = 0}) => {
       <div className="info">
         <div className="top">
           <span className="title">{item.category}</span>
-          <span className="title">{item.amount}</span>
+          <span className="title">{totalAmount}</span>
         </div>
 
         <div className="bottom">
-          <span>{formatDate(item.date)}</span>
+          <span>{formatDate(item.date, dateOptions)}</span>
           <span>{item.company}</span>
         </div>
       </div>

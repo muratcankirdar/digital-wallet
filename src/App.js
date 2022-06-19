@@ -61,8 +61,8 @@ function App() {
 
         <AddCardButton onAddCard={() => setIsDialogVisible(true)}/>
 
-        <Transactions selectedCard={selectedCard()}/>
-        {/* Bottom Bar */}
+        <Transactions selectedCard={selectedCard()} currencyExchangeRates={user.currencyExchangeRates}/>
+
         <BottomNavigation/>
       </div>
 

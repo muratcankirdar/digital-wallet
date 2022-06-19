@@ -3,9 +3,17 @@ import {ExpenseItem} from './index';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
+import {calculateAmount} from '../utils/numberFormat';
 
-const Transactions = ({selectedCard}) => {
-  const [currency, setCurrency] = useState('USD');
+const Transactions = ({selectedCard, currencyExchangeRates}) => {
+  const [currency, setCurrency] = useState('Usd');
+
+  const totalAmount =
+    calculateAmount({
+      amount: selectedCard.amount,
+      currency,
+      currencyExchangeRates
+    });
 
   return (
     <div className="transactions">
@@ -17,7 +25,7 @@ const Transactions = ({selectedCard}) => {
 
           <div>
             <span className="amount">
-              8.400,12 ₺ {/* Use INTL.number format currency here */}
+              {totalAmount} {/* Use INTL.number format currency here */}
             </span>
           </div>
         </div>
@@ -28,10 +36,10 @@ const Transactions = ({selectedCard}) => {
               value={currency}
               onChange={(event) => setCurrency(event.target.value)}
             >
-              <MenuItem value="TRY">TL</MenuItem>
-              <MenuItem value="USD">USD</MenuItem>
-              <MenuItem value="EUR">EUR</MenuItem>
-              <MenuItem value="CHF">CHF</MenuItem>
+              <MenuItem value="Try">TL</MenuItem>
+              <MenuItem value="Usd">USD</MenuItem>
+              <MenuItem value="Eur">EUR</MenuItem>
+              <MenuItem value="Chf">CHF</MenuItem>
             </Select>
           </FormControl>
         </div>
@@ -45,7 +53,13 @@ const Transactions = ({selectedCard}) => {
         <div className="expenses">
           {selectedCard.transactions &&
             selectedCard.transactions.map((item, index) => (
-              <ExpenseItem index={index} key={index} item={item}/>
+              <ExpenseItem
+                item={item}
+                key={index}
+                currency={currency}
+                currencyExchangeRates={currencyExchangeRates}
+                index={index}
+              />
             ))
           }
         </div>
